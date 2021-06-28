@@ -28,14 +28,39 @@ function App(props) {
 			let localUser = window.localStorage.getItem("user");
 			//set state with token/user info
 			setUserState({ ...userState, token: localToken, user: localUser });
+			//get initial performance data
+			getPerformances(localToken);
+			// console.log("perf " + performances)
 		} else {
-			alert("please log in");
+			console.log("please log in");
 		}
-	}, []);
+		//run again when change in token
+	}, [userState.token]);
 
 	//set user from login
 	const setUser = (loginToken, loginUser) => {
 		setUserState({ ...userState, token: loginToken, user: loginUser });
+	};
+
+	//performance state
+	const [performances, setPerformances] = useState(null);
+
+	//get performance data
+	const getPerformances = async (localToken) => {
+		// console.log("use state token " + localToken);
+		try {
+			const response = await fetch(URL + "performances", {
+				headers: {
+					Authorization: `Bearer ${localToken}`,
+				},
+			});
+			const data = await response.json();
+			// console.log("getperf response data " + data);
+			// console.log("userstate is " + userState.token)
+			setPerformances(data);
+		} catch (error) {
+			console.log(error);
+		}
 	};
 
 	return (
@@ -49,7 +74,13 @@ function App(props) {
 				<Route
 					exact
 					path="/performances"
-					render={(routerProps) => <Index {...routerProps} />}
+					render={(routerProps) => (
+						<Index
+							{...routerProps}
+							performances={performances}
+							user={userState}
+						/>
+					)}
 				/>
 				<Route
 					path="/performances/:id"

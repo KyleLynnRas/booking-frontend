@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 
 const Home = ({ user }) => {
-	console.log(user);
+	console.log("home receives user data " + user);
 	return (
 		<section>
 			{user.token ? <h1>WELCOME BACK!</h1> : <h1>Welcome</h1>}
-
 			{user.token ? (
 				<div>
 					<Link to="/performances">Let's go!</Link>
