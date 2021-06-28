@@ -10,25 +10,37 @@ const LoginPage = (props) => {
 
 	//sending form data to backend for auth/token
 	const login = async (formData) => {
-		const response = await fetch(props.url + "login", {
-			method: "post",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(formData),
-		});
-		//parse response data
-		const currentUser = await response.json();
-		let loginToken = currentUser.token;
-		// let loginToken = JSON.stringify(currentUser.token);
-		let loginUser = JSON.stringify(currentUser.user.id);
-		//save to local storage
-		window.localStorage.setItem("token", loginToken);
-		window.localStorage.setItem("user", loginUser);
-		//pass to change state in app
-		props.setUser(loginToken, loginUser);
-		//redirect to performance index
-		props.history.push("/performances");
+		try {
+			const response = await fetch(props.url + "login", {
+				method: "post",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(formData),
+			});
+			//parse response data
+			const currentUser = await response.json();
+
+			//alert if login unsucessful
+			if (currentUser.error) {
+				//clear form
+				setFormData({ username: "", password: "" });
+				alert(currentUser.error);
+			} else {
+				let loginToken = currentUser.token;
+				// let loginToken = JSON.stringify(currentUser.token);
+				let loginUser = JSON.stringify(currentUser.user.id);
+				//save to local storage
+				window.localStorage.setItem("token", loginToken);
+				window.localStorage.setItem("user", loginUser);
+				//pass to change state in app
+				props.setUser(loginToken, loginUser);
+				//redirect to performance index
+				props.history.push("/performances");
+			}
+		} catch (error) {
+			alert(error);
+		}
 	};
 
 	//handleChange

@@ -71,7 +71,7 @@ function App(props) {
 				/>
 				<Route
 					path="/signup"
-					render={(routerProps) => <SignUp {...routerProps} />}
+					render={(routerProps) => <SignUp {...routerProps} url={URL} />}
 				/>
 			</Switch>
 		</div>
