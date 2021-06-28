@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-const LoginPage = ({ url, setUser }) => {
+const LoginPage = (props) => {
 	//form state
 	const [formData, setFormData] = useState({
 		username: "",
@@ -10,7 +10,7 @@ const LoginPage = ({ url, setUser }) => {
 
 	//sending form data to backend for auth/token
 	const login = async (formData) => {
-		const response = await fetch(url + "login", {
+		const response = await fetch(props.url + "login", {
 			method: "post",
 			headers: {
 				"Content-Type": "application/json",
@@ -19,13 +19,16 @@ const LoginPage = ({ url, setUser }) => {
 		});
 		//parse response data
 		const currentUser = await response.json();
-		let loginToken = JSON.stringify(currentUser.token);
+		let loginToken = currentUser.token;
+		// let loginToken = JSON.stringify(currentUser.token);
 		let loginUser = JSON.stringify(currentUser.user.id);
 		//save to local storage
 		window.localStorage.setItem("token", loginToken);
 		window.localStorage.setItem("user", loginUser);
 		//pass to change state in app
-		setUser(loginToken, loginUser);
+		props.setUser(loginToken, loginUser);
+		//redirect to performance index
+		props.history.push("/performances");
 	};
 
 	//handleChange
@@ -37,12 +40,12 @@ const LoginPage = ({ url, setUser }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		//run login func with formData
-		// console.log(formData)
 		login(formData);
 	};
 
 	return (
 		<section>
+			<h1>Login</h1>
 			<form onSubmit={handleSubmit}>
 				<h1>Username</h1>
 				<input
