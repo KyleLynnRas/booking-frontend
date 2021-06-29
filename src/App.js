@@ -35,7 +35,6 @@ function App(props) {
 			//get initial data
 			getPerformances(localToken);
 			getReviews(localToken);
-			// console.log("perf " + performances)
 		} else {
 			console.log("please log in");
 		}
@@ -49,7 +48,6 @@ function App(props) {
 
 	//get performance data
 	const getPerformances = async (localToken) => {
-		// console.log("use state token " + localToken);
 		try {
 			const response = await fetch(URL + "performances", {
 				headers: {
@@ -57,8 +55,6 @@ function App(props) {
 				},
 			});
 			const data = await response.json();
-			// console.log("getperf response data " + data);
-			// console.log("userstate is " + userState.token)
 			setPerformances(data);
 		} catch (error) {
 			console.log(error);
@@ -66,16 +62,34 @@ function App(props) {
 	};
 
 	//get review data
-	const getReviews = async (localToken) => {
+	const getReviews = async (token) => {
 		try {
 			const response = await fetch(URL + "reviews", {
 				headers: {
-					Authorization: `Bearer ${localToken}`,
+					Authorization: `Bearer ${token}`,
 				},
 			});
 			const data = await response.json();
-			console.log("review " + data);
 			setReviews(data);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	//create new review
+	const createReview = async (formData) => {
+		try {
+			const response = await fetch(URL + "reviews", {
+				method: "post",
+				headers: {
+					Authorization: `Bearer ${userState.token}`,
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(formData),
+			});
+			const data = await response.json();
+			//update reviews
+			getReviews(userState.token);
 		} catch (error) {
 			console.log(error);
 		}
@@ -105,9 +119,10 @@ function App(props) {
 					render={(routerProps) => (
 						<Show
 							{...routerProps}
-							user={userState}
+							users={userState}
 							performances={performances}
 							reviews={reviews}
+							create={createReview}
 						/>
 					)}
 				/>

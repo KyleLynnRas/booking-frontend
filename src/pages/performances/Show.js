@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 //components
 import Review from "../../components/Review";
+import Form from "../../components/Form";
 
 const Show = (props) => {
 	//id from params
 	const id = props.match.params.id;
-	const newId = id.toString();
 	const performances = props.performances;
 	const performance = performances.find((p) => p.id == id);
 
@@ -14,7 +15,7 @@ const Show = (props) => {
 	};
 
 	const loaded = () => {
-		//retrn related reviews into new array
+		//return related reviews into new array
 		const revArr = props.reviews.filter((ele) => {
 			if (ele.performance.id == id) {
 				return ele;
@@ -47,8 +48,14 @@ const Show = (props) => {
 			<section>
 				<h1>Reviews</h1>
 				{props.reviews ? loaded() : loading()}
-				<button>Add Review</button>
 			</section>
+			<section>
+				<h3>Add Review</h3>
+				<Form users={props.users} create={props.create} id={id} />
+			</section>
+			<button>
+				<Link to="/performances">Back</Link>
+			</button>
 		</div>
 	);
 };
