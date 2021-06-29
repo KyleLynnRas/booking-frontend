@@ -11,8 +11,6 @@ const Index = (props) => {
 		}
 	}, []);
 
-	console.log("index receives perf data " + props.performances);
-
 	const loading = () => {
 		return (
 			<div className="loading">
@@ -25,7 +23,8 @@ const Index = (props) => {
 		return props.performances.map((ele, index) => {
 			return (
 				<Performance
-					key={index}
+					key={index + 1}
+					id={index + 1}
 					title={ele.title}
 					img={ele.img}
 					summary={ele.summary}

@@ -17,6 +17,10 @@ function App(props) {
 		token: null,
 	});
 
+	const [reviews, setReviews] = useState(null);
+
+	const [performances, setPerformances] = useState(null);
+
 	const URL = "https://bookin-api-kr.herokuapp.com/";
 
 	//Initial token check, if none send home
@@ -28,8 +32,9 @@ function App(props) {
 			let localUser = window.localStorage.getItem("user");
 			//set state with token/user info
 			setUserState({ ...userState, token: localToken, user: localUser });
-			//get initial performance data
+			//get initial data
 			getPerformances(localToken);
+			getReviews(localToken);
 			// console.log("perf " + performances)
 		} else {
 			console.log("please log in");
@@ -41,9 +46,6 @@ function App(props) {
 	const setUser = (loginToken, loginUser) => {
 		setUserState({ ...userState, token: loginToken, user: loginUser });
 	};
-
-	//performance state
-	const [performances, setPerformances] = useState(null);
 
 	//get performance data
 	const getPerformances = async (localToken) => {
@@ -58,6 +60,22 @@ function App(props) {
 			// console.log("getperf response data " + data);
 			// console.log("userstate is " + userState.token)
 			setPerformances(data);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	//get review data
+	const getReviews = async (localToken) => {
+		try {
+			const response = await fetch(URL + "reviews", {
+				headers: {
+					Authorization: `Bearer ${localToken}`,
+				},
+			});
+			const data = await response.json();
+			console.log("review " + data);
+			setReviews(data);
 		} catch (error) {
 			console.log(error);
 		}
@@ -84,7 +102,14 @@ function App(props) {
 				/>
 				<Route
 					path="/performances/:id"
-					render={(routerProps) => <Show {...routerProps} />}
+					render={(routerProps) => (
+						<Show
+							{...routerProps}
+							user={userState}
+							performances={performances}
+							reviews={reviews}
+						/>
+					)}
 				/>
 				<Route
 					path="/reviews/new"
