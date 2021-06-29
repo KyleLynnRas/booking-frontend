@@ -37,6 +37,10 @@ const Index = (props) => {
 	return (
 		<div>
 			<header>
+			<video autoplay muted loop id="myVideo">
+  				<source src="rain.mp4" type="video/mp4"/>
+  				Your browser does not support HTML5 video.
+			</video>
 				<h1>Peculiarity Productions</h1>
 				<p>Make your event memorable by adding some peculiar entertainment!</p>
 			</header>

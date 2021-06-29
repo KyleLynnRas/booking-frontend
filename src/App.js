@@ -1,4 +1,4 @@
-import "./App.css";
+import "./styles.scss";
 import React from "react";
 import { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
