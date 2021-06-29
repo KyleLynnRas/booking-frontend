@@ -45,6 +45,13 @@ const Show = (props) => {
 				<img src={performance.img} alt={performance.title} />
 				<p>{performance.summary}</p>
 				<p>$ {performance.price}</p>
+				<a
+					href="mailto:peculiarityproductions@gmail.com?Subject=Quote%20request"
+					target="_blank"
+					rel="noreferrer"
+				>
+					<button>Request a booking</button>
+				</a>
 			</section>
 			<section>
 				<h1>Reviews</h1>
