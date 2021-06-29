@@ -106,10 +106,26 @@ function App(props) {
 				body: JSON.stringify(formData),
 			});
 			const data = await response.json();
-			console.log("update test " + data.id);
+			// console.log("update test " + data.id);
 			//update reviews
 			getReviews(userState.token);
 			props.history.push(`/performances/${perfId}`);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	//destroy review info
+	const destroyReview = async (revId) => {
+		try {
+			const response = await fetch(URL + `reviews/${revId}`, {
+				method: "delete",
+				headers: {
+					Authorization: `Bearer ${userState.token}`,
+				},
+			});
+			//update reviews
+			getReviews(userState.token);
 		} catch (error) {
 			console.log(error);
 		}
@@ -143,6 +159,7 @@ function App(props) {
 							performances={performances}
 							reviews={reviews}
 							create={createReview}
+							destroyReview={destroyReview}
 						/>
 					)}
 				/>

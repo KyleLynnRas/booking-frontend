@@ -30,6 +30,7 @@ const Show = (props) => {
 					category={ele.category}
 					content={ele.content}
 					author={ele.user.username}
+					destroyReview={props.destroyReview}
 				/>
 			);
 		});
