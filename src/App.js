@@ -8,7 +8,6 @@ import Login from "./pages/LoginPage";
 import Index from "./pages/performances/Index";
 import SignUp from "./pages/SignUp";
 import Show from "./pages/performances/Show";
-import New from "./pages/reviews/New";
 import Edit from "./pages/reviews/Edit";
 
 function App(props) {
@@ -95,6 +94,27 @@ function App(props) {
 		}
 	};
 
+	//update review info
+	const updateReview = async (formData, perfId, revId) => {
+		try {
+			const response = await fetch(URL + `reviews/${revId}`, {
+				method: "put",
+				headers: {
+					"Content-Type": "application/json",
+					Authorization: `Bearer ${userState.token}`,
+				},
+				body: JSON.stringify(formData),
+			});
+			const data = await response.json();
+			console.log("update test " + data.id);
+			//update reviews
+			getReviews(userState.token);
+			props.history.push(`/performances/${perfId}`);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
 	return (
 		<div className="App">
 			<Switch>
@@ -127,12 +147,15 @@ function App(props) {
 					)}
 				/>
 				<Route
-					path="/reviews/new"
-					render={(routerProps) => <New {...routerProps} />}
-				/>
-				<Route
 					path="/reviews/:id/edit"
-					render={(routerProps) => <Edit {...routerProps} />}
+					render={(routerProps) => (
+						<Edit
+							{...routerProps}
+							users={userState}
+							reviews={reviews}
+							updateReview={updateReview}
+						/>
+					)}
 				/>
 				<Route
 					path="/login"

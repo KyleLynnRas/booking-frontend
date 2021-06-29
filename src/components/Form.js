@@ -16,8 +16,8 @@ const Form = (props) => {
 	const handleSubmit = (e) => {
 		console.log(formData);
 		e.preventDefault();
-		//create new review
-		props.create(formData);
+		//create/edit depending on prop func sent
+		props.submitFunc(formData, props.id, props.revId);
 	};
 
 	return (

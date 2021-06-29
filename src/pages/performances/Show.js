@@ -5,7 +5,7 @@ import Review from "../../components/Review";
 import Form from "../../components/Form";
 
 const Show = (props) => {
-	//id from params
+	//performance id from params
 	const id = props.match.params.id;
 	const performances = props.performances;
 	const performance = performances.find((p) => p.id == id);
@@ -51,7 +51,7 @@ const Show = (props) => {
 			</section>
 			<section>
 				<h3>Add Review</h3>
-				<Form users={props.users} create={props.create} id={id} />
+				<Form users={props.users} submitFunc={props.create} id={id} />
 			</section>
 			<button>
 				<Link to="/performances">Back</Link>
