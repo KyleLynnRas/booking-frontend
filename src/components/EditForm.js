@@ -3,13 +3,7 @@ import React, { useState } from "react";
 import { Form, Button } from "react-bulma-components";
 
 const EditForm = (props) => {
-	const [formData, setFormData] = useState({
-		category: "review",
-		rating: "",
-		user_id: props.users.user,
-		content: "",
-		performance_id: props.id,
-	});
+	const [formData, setFormData] = useState(props.initialReview);
 
 	const handleChange = (e) => {
 		setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,7 +13,7 @@ const EditForm = (props) => {
 	const handleSubmit = (e) => {
 		console.log(formData);
 		e.preventDefault();
-		//create/edit depending on submitFunc prop func sent
+		//edit
 		props.submitFunc(formData, props.id, props.revId);
 	};
 
