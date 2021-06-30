@@ -156,7 +156,6 @@ function App(props) {
 							performances={performances}
 							reviews={reviews}
 							create={createReview}
-							destroyReview={destroyReview}
 						/>
 					)}
 				/>
@@ -168,6 +167,7 @@ function App(props) {
 							users={userState}
 							reviews={reviews}
 							updateReview={updateReview}
+							destroyReview={destroyReview}
 						/>
 					)}
 				/>

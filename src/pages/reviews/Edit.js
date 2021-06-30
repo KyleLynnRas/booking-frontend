@@ -5,7 +5,7 @@ const Edit = (props) => {
 	//get review id from param
 	const id = props.match.params.id;
 	const reviews = props.reviews;
-	//find review
+	//find review - pass to edit form for starter data
 	const review = reviews.find((r) => r.id === parseInt(id));
 	//related performance info
 	const perfId = review.performance_id;
@@ -19,6 +19,9 @@ const Edit = (props) => {
 					id={perfId}
 					submitFunc={props.updateReview}
 					revId={id}
+					initialReview={review}
+					destroyReview={props.destroyReview}
+					class="edit-form-container"
 				/>
 			</section>
 		</div>

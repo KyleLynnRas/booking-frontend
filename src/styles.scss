@@ -186,7 +186,8 @@ $main: "Lato", sans-serif;
 		margin-bottom: 20px;
 	}
 }
-.review-form-container {
+.show-form-container,
+.edit-form-container {
 	@include flex-column;
 }
 
@@ -205,6 +206,145 @@ $main: "Lato", sans-serif;
 
 .form-text {
 	font-size: 18px;
+	color: #fff;
+}
+
+// --------------------------
+// Performance Show
+// --------------------------
+.main-show-conainter {
+	height: 100vh;
+	@include flex-column;
+}
+
+.show-header {
+	height: 38vh;
+	background-image: url("https://i.imgur.com/tpbJlNE.jpg");
+	background-image: linear-gradient(#00000098, rgba(0, 0, 0, 0.913)),
+		url("https://i.imgur.com/tpbJlNE.jpg");
+	background-image: -webkit-linear-gradient(#00000098, rgba(0, 0, 0, 0.913)),
+		url("https://i.imgur.com/tpbJlNE.jpg");
+	background-image: -moz-linear-gradient(#00000098, rgba(0, 0, 0, 0.913)),
+		url("https://i.imgur.com/tpbJlNE.jpg");
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	@include backgroundImage;
+
+	h1 {
+		font-size: 33px;
+		font-family: $titles;
+		color: #fff;
+	}
+}
+
+.perf-content {
+	@include flex-column;
+
+	.summary {
+		margin-bottom: 50px;
+		font-size: 20px;
+	}
+
+	.show-img {
+		border: 4px solid rgba(255, 255, 255, 0.947);
+		width: 80%;
+		position: relative;
+		top: -30px;
+	}
+
+	.book-btn {
+		background-color: rgba(255, 135, 6, 0.906);
+		color: #fff;
+	}
+}
+
+.show-form-container {
+	color: #000;
+
+	.form-text {
+		color: #000;
+		font-weight: 400;
+	}
+
+	.form-input {
+		margin: 5px;
+	}
+
+	.form-btn {
+		color: #000;
+		border: 1px solid #000;
+	}
+}
+
+.add-review-container {
+	margin-top: 30px;
+	background-image: url("https://i.imgur.com/tpbJlNE.jpg");
+	background-image: linear-gradient(#ffffffc7, #ffffffc7),
+		url("https://i.imgur.com/tpbJlNE.jpg");
+	background-image: -webkit-linear-gradient(#ffffffc7, #ffffffc7),
+		url("https://i.imgur.com/tpbJlNE.jpg");
+	background-image: -moz-linear-gradient(#ffffffc7, #ffffffc7),
+		url("https://i.imgur.com/tpbJlNE.jpg");
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	@include backgroundImage;
+
+	h3 {
+		font-weight: 400;
+		color: #000;
+		margin-top: 25px;
+		margin-bottom: 25px;
+		font-size: 25px;
+		font-family: $titles;
+	}
+}
+
+.review-container {
+	margin-top: 30px;
+	@include flex-column;
+	margin-bottom: 60px;
+}
+
+.rev-title {
+	text-align: center;
+
+	h3 {
+		font-size: 30px;
+		margin-top: 60px;
+		font-family: $titles;
+		color: #000;
+	}
+}
+
+.revs {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+}
+
+.review-link {
+	margin-top: 40px;
+	@include flex-column;
+
+	h4 {
+		color: #000;
+		font-size: 20px;
+	}
+
+	p {
+		font-size: 15px;
+		color: #000;
+	}
+}
+
+.loading {
+	background-color: transparent;
+	font-size: 100px;
 	color: #fff;
 }
 
@@ -289,6 +429,114 @@ $main: "Lato", sans-serif;
 			margin-bottom: 20px;
 		}
 	}
+
+	//Perf show
+	.show-header {
+		height: 38vh;
+
+		h1 {
+			font-size: 55px;
+		}
+	}
+
+	.perf-content {
+		@include flex-column;
+
+		.summary {
+			margin-bottom: 50px;
+			font-size: 25px;
+		}
+
+		.show-img {
+			width: 70%;
+			top: -40px;
+		}
+
+		.book-btn {
+			font-size: 20px;
+			font-weight: 600;
+		}
+	}
+
+	.add-review-container {
+		margin-top: 90px;
+
+		h3 {
+			margin-top: 25px;
+			margin-bottom: 25px;
+			font-size: 40px;
+			font-family: $titles;
+		}
+	}
+
+	.show-form-container {
+		color: #000;
+
+		.form-text {
+			color: #000;
+			font-size: 25px;
+			font-weight: 400;
+		}
+
+		.form-input {
+			margin: 5px;
+		}
+
+		.form-btn {
+			color: #000;
+			border: 1px solid #000;
+		}
+	}
+
+	.review-container {
+		@include flex-column;
+		margin-bottom: 50px;
+	}
+
+	.rev-title {
+		text-align: center;
+
+		h3 {
+			font-size: 40px;
+			margin-top: 50px;
+			margin-bottom: 30px;
+			font-family: $titles;
+			color: #000;
+		}
+	}
+
+	.revs {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-content: center;
+		flex-wrap: wrap;
+	}
+
+	.review {
+		width: 30%;
+	}
+
+	.review-link {
+		margin-top: 40px;
+		@include flex-column;
+
+		h4 {
+			color: #000;
+			font-size: 25px;
+		}
+
+		p {
+			font-size: 20px;
+			color: #000;
+		}
+	}
+
+	.loading {
+		background-color: transparent;
+		font-size: 100px;
+		color: #fff;
+	}
 }
 
 @media screen and (min-width: 950px) {
@@ -362,6 +610,96 @@ $main: "Lato", sans-serif;
 			margin-bottom: 30px;
 		}
 	}
+
+	//Perf show
+	.show-header {
+		height: 42vh;
+
+		h1 {
+			font-size: 65px;
+		}
+	}
+
+	.perf-content {
+		margin-bottom: 40px;
+
+		.summary {
+			margin-bottom: 50px;
+			font-size: 33px;
+		}
+
+		.show-img {
+			width: 70%;
+			top: -40px;
+		}
+
+		.book-btn {
+			margin-top: 40px;
+			font-size: 25px;
+			font-weight: 600;
+		}
+	}
+
+	.add-review-container {
+		@include flex-column;
+		margin-top: 100px;
+
+		h3 {
+			margin-top: 45px;
+			margin-bottom: 25px;
+			font-size: 45px;
+		}
+	}
+
+	.show-form-container {
+		.form-text {
+			font-size: 33px;
+		}
+
+		.form-input {
+			margin: 5px;
+		}
+
+		.form-btn {
+		}
+	}
+
+	.review-container {
+		@include flex-column;
+		margin-bottom: 50px;
+	}
+
+	.rev-title {
+		text-align: center;
+
+		h3 {
+			font-size: 45px;
+			margin-top: 50px;
+			margin-bottom: 30px;
+		}
+	}
+
+	.review {
+		width: 32%;
+	}
+
+	.review-link {
+		margin-top: 40px;
+
+		h4 {
+			font-size: 30px;
+		}
+
+		p {
+			font-size: 25px;
+		}
+	}
+
+	.loading {
+		background-color: transparent;
+		font-size: 100px;
+		color: #fff;
+	}
 }
 
 @media screen and (min-width: 1200px) {
@@ -419,6 +757,64 @@ $main: "Lato", sans-serif;
 	.form-text {
 		margin: 20px auto;
 		font-size: 25px;
+	}
+
+	//Perf show
+	.show-header {
+		height: 50vh;
+
+		h1 {
+			font-size: 65px;
+		}
+	}
+
+	.perf-content {
+		margin-bottom: 100px;
+
+		.summary {
+			font-size: 33px;
+		}
+
+		.show-img {
+			width: 65%;
+		}
+
+		.book-btn {
+			font-size: 20px;
+		}
+	}
+
+	.add-review-container {
+		@include flex-column;
+		margin-top: 100px;
+
+		h3 {
+			margin-top: 45px;
+			margin-bottom: 25px;
+			font-size: 45px;
+		}
+	}
+
+	.show-form-container {
+		.form-text {
+			font-size: 30px;
+		}
+
+	}
+
+	.review {
+		width: 30%;
+	}
+
+	.review-link {
+
+		h4 {
+			font-size: 30px;
+		}
+
+		p {
+			font-size: 20px;
+		}
 	}
 
 }

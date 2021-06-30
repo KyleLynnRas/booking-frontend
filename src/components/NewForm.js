@@ -2,33 +2,29 @@ import React, { useState } from "react";
 //Bulma
 import { Form, Button } from "react-bulma-components";
 
-const EditForm = (props) => {
-	const [formData, setFormData] = useState({
+const NewForm = (props) => {
+	//starter form data
+	const nullReview = {
 		category: "review",
 		rating: "",
 		user_id: props.users.user,
 		content: "",
 		performance_id: props.id,
-	});
+	};
+
+	const [formData, setFormData] = useState(nullReview);
 
 	const handleChange = (e) => {
 		setFormData({ ...formData, [e.target.name]: e.target.value });
-		console.log(formData);
 	};
 
 	const handleSubmit = (e) => {
 		console.log(formData);
 		e.preventDefault();
-		//create/edit depending on submitFunc prop func sent
+		//create
 		props.submitFunc(formData, props.id, props.revId);
-	};
-
-	//delete review
-	const handleDelete = (e) => {
-		//review id
-		const revId = props.revId;
-		//run func from app
-		props.destroyReview(revId);
+		//clear form
+		setFormData(nullReview);
 	};
 
 	return (
@@ -65,14 +61,11 @@ const EditForm = (props) => {
 					/>
 				</Form.Control>
 			</Form.Field>
-			<Button className="form-btn" onClick={handleDelete}>
-				Delete
-			</Button>
-			<Button className="form-btn" type="submit" value="submit">
+			<Button className="form-btn is-rounded" type="submit" value="submit">
 				Submit
 			</Button>
 		</form>
 	);
 };
 
-export default EditForm;
+export default NewForm;

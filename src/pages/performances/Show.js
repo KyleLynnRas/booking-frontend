@@ -1,81 +1,96 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 //components
 import Review from "../../components/Review";
-import EditForm from "../../components/EditForm";
+import NewForm from "../../components/NewForm";
+//Bulma
+import { Button, Image } from "react-bulma-components";
 
 const Show = (props) => {
 	useEffect(() => {
 		console.log(props.users.token);
 		if (props.users.token) {
 		} else {
-			props.history.push("/login");
+			props.history.push("/");
 		}
 	}, []);
 
 	//performance id from params
 	const id = props.match.params.id;
-	const performances = props.performances;
 
 	const loading = () => {
-		return <h1>Loading....</h1>;
+		return (
+			<section>
+				<button className="button is-loading loading">Loading</button>
+			</section>
+		);
 	};
 
 	const loaded = () => {
 		//find performance
+		const performances = props.performances;
 		const performance = performances.find((p) => p.id === parseInt(id));
 		//return related reviews into new array
 		const revArr = props.reviews.filter((ele) => {
-			if (ele.performance.id === parseInt(id)) {
+			//only show reviews not favs
+			if (ele.performance.id === parseInt(id) && ele.category === "review") {
 				return ele;
 			}
 		});
 
 		return (
-			<div>
-				<section>
-					<img src={performance.img} alt={performance.title} />
-					<p>{performance.summary}</p>
-					<p>$ {performance.price}</p>
+			<>
+				<header className="show-header">
+					<h1>{performance.title}</h1>
+				</header>
+				<section className="perf-content">
+					<Image
+						className="show-img"
+						src={performance.img}
+						alt={performance.title}
+					/>
+					<p className="summary">{performance.summary}</p>
 					<a
 						href="mailto:peculiarityproductions@gmail.com?Subject=Quote%20request"
 						target="_blank"
 						rel="noreferrer"
 					>
-						<button>Request a booking</button>
+						<Button className="book-btn is-rounded">Request a quote</Button>
 					</a>
 				</section>
-				<section>
-					<h1>Reviews</h1>
-					{revArr.map((ele) => (
-						<Review
-							key={ele.id}
-							id={ele.id}
-							category={ele.category}
-							content={ele.content}
-							author={ele.user.username}
-							destroyReview={props.destroyReview}
-						/>
-					))}
-					;
+
+				<section className="review-container">
+					<div className="rev-title">
+						<h3>Reviews</h3>
+					</div>
+					<div className="revs">
+						{revArr.map((ele) => (
+							<Review
+								key={ele.id}
+								id={ele.id}
+								category={ele.category}
+								content={ele.content}
+								author={ele.user.username}
+								destroyReview={props.destroyReview}
+							/>
+						))}
+					</div>
 				</section>
-			</div>
+				<section className="add-review-container">
+					<h3>Add Review</h3>
+					<NewForm
+						users={props.users}
+						submitFunc={props.create}
+						id={id}
+						class="show-form-container"
+					/>
+				</section>
+			</>
 		);
 	};
 
 	return (
-		<div>
-			<header>
-				<h1>{performance.title}</h1>
-			</header>
+		<div className="main-show-container">
 			{props.reviews ? loaded() : loading()}
-			<section>
-				<h3>Add Review</h3>
-				<EditForm users={props.users} submitFunc={props.create} id={id} />
-			</section>
-			<button>
-				<Link to="/performances">Back</Link>
-			</button>
 		</div>
 	);
 };

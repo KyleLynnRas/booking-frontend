@@ -23,8 +23,8 @@ const Index = (props) => {
 		return props.performances.map((ele, index) => {
 			return (
 				<Performance
-					key={index + 1}
-					id={index + 1}
+					key={ele.id}
+					id={ele.id}
 					title={ele.title}
 					img={ele.img}
 					summary={ele.summary}

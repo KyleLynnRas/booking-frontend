@@ -1,23 +1,46 @@
 import { Link } from "react-router-dom";
+//icons
+import { BsFillStarFill } from "react-icons/bs";
 
 const Review = (props) => {
-	const handleChange = (e) => {
-		//review id
-		const revId = props.id;
-		//run func from app
-		props.destroyReview(revId);
-	};
-
 	return (
-		<div id={props.id} className={props.category}>
-			<h4>Rating: {props.rating}</h4>
-			<p>
-				"{props.content}" - {props.author}
-			</p>
-			<button>
-				<Link to={`/reviews/${props.id}/edit`}>Edit</Link>
-			</button>
-			<button onClick={handleChange}>Delete</button>
+		<div id={props.id} className="review">
+			<Link className="review-link" to={`/reviews/${props.id}/edit`}>
+				{props.rating === 1 ? (
+					<h4>
+						<BsFillStarFill />
+					</h4>
+				) : props.rating === 2 ? (
+					<h4>
+						<BsFillStarFill />
+						<BsFillStarFill />
+					</h4>
+				) : props.rating === 3 ? (
+					<h4>
+						<BsFillStarFill />
+						<BsFillStarFill />
+						<BsFillStarFill />
+					</h4>
+				) : props.rating === 4 ? (
+					<h4>
+						<BsFillStarFill />
+						<BsFillStarFill />
+						<BsFillStarFill />
+						<BsFillStarFill />
+					</h4>
+				) : (
+					<h4>
+						<BsFillStarFill />
+						<BsFillStarFill />
+						<BsFillStarFill />
+						<BsFillStarFill />
+						<BsFillStarFill />
+					</h4>
+				)}
+				<p>
+					"{props.content}" - {props.author}
+				</p>
+			</Link>
 		</div>
 	);
 };

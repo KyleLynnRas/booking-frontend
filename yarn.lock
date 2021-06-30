@@ -3089,7 +3089,7 @@
   "resolved" "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz"
   "version" "3.0.0"
 
-"bulma@>=0.9.2":
+"bulma@^0.9.3", "bulma@>=0.9.2":
   "integrity" "sha512-0d7GNW1PY4ud8TWxdNcP6Cc8Bu7MxcntD/RRLGWuiw/s0a9P+XlH/6QoOIrmbj6o8WWJzJYhytiu9nFjTszk1g=="
   "resolved" "https://registry.npmjs.org/bulma/-/bulma-0.9.3.tgz"
   "version" "0.9.3"
