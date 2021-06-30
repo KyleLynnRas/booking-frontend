@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 //components
 import Performance from "../../components/Performance";
 import Footer from "../../components/Footer";
+import Nav from "../../components/Nav";
 
 const Index = (props) => {
 	useEffect(() => {
@@ -37,6 +38,7 @@ const Index = (props) => {
 
 	return (
 		<div>
+			<Nav />
 			<header>
 				<h1>Peculiarity Productions</h1>
 				<p>Make your event memorable by adding some peculiar entertainment!</p>
@@ -50,7 +52,7 @@ const Index = (props) => {
 				</h2>
 			</section>
 			<section>{props.performances ? loaded() : loading()}</section>
-			<Footer/>
+			<Footer />
 		</div>
 	);
 };

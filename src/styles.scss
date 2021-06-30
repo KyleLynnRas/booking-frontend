@@ -353,10 +353,38 @@ $main: "Lato", sans-serif;
 // --------------------------
 .footer-container {
 	background-color: #000;
-	margin-top: 80px;
 }
 
+// --------------------------
+// Nav
+// --------------------------
+.navbar {
+	position: absolute;
+	top: 0;
+	width: 100vw;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #000;
+	color: #fff;
 
+.nav-icon {
+	color: #fff;
+	font-size: 17px;
+	cursor: pointer;
+}
+
+.nav-link {
+	color: #fff;
+	font-size: 17px;
+	cursor: pointer;
+}
+
+.nav-icon:hover, .nav-link:hover {
+	color: rgba(238, 175, 87, 0.979);
+}
+
+}
 
 // --------------------------
 // Media Query

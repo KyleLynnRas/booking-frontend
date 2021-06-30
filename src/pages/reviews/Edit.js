@@ -1,5 +1,6 @@
 //components
 import EditForm from "../../components/EditForm";
+import Nav from "../../components/Nav";
 
 const Edit = (props) => {
 	//get review id from param
@@ -12,6 +13,7 @@ const Edit = (props) => {
 
 	return (
 		<div className="main-signup-container">
+			<Nav />
 			<section className="edit-content-container">
 				<h1>Edit your review</h1>
 				<EditForm

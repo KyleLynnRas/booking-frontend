@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import AuthForm from "../components/AuthForm";
+import Nav from "../components/Nav";
 
 const LoginPage = (props) => {
 	//form state
@@ -58,6 +59,7 @@ const LoginPage = (props) => {
 
 	return (
 		<div className="main-signup-container">
+			<Nav />
 			<section className="signup-content-container">
 				<h1>Login</h1>
 				<AuthForm
