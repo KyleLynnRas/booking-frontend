@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 //components
 import Review from "../../components/Review";
 import NewForm from "../../components/NewForm";
+import Footer from "../../components/Footer";
 //Bulma
 import { Button, Image } from "react-bulma-components";
 
@@ -91,6 +92,7 @@ const Show = (props) => {
 	return (
 		<div className="main-show-container">
 			{props.reviews ? loaded() : loading()}
+			<Footer />
 		</div>
 	);
 };

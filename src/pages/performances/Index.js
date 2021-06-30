@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 //components
 import Performance from "../../components/Performance";
+import Footer from "../../components/Footer";
 
 const Index = (props) => {
 	useEffect(() => {
@@ -49,6 +50,7 @@ const Index = (props) => {
 				</h2>
 			</section>
 			<section>{props.performances ? loaded() : loading()}</section>
+			<Footer/>
 		</div>
 	);
 };

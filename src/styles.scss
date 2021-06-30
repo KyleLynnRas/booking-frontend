@@ -349,6 +349,16 @@ $main: "Lato", sans-serif;
 }
 
 // --------------------------
+// Footer
+// --------------------------
+.footer-container {
+	background-color: #000;
+	margin-top: 80px;
+}
+
+
+
+// --------------------------
 // Media Query
 // --------------------------
 @media screen and (min-width: 768px) {
@@ -658,9 +668,6 @@ $main: "Lato", sans-serif;
 
 		.form-input {
 			margin: 5px;
-		}
-
-		.form-btn {
 		}
 	}
 
