@@ -147,6 +147,14 @@ $main: "Lato", sans-serif;
 	}
 }
 
+.form-container {
+	@include flex-column;
+}
+
+.form-input {
+	margin: 15px auto;
+}
+
 .form-btn {
 	margin-top: 30px;
 	margin-bottom: 20px;
@@ -162,10 +170,49 @@ $main: "Lato", sans-serif;
 }
 
 // --------------------------
+// Edit Review
+// --------------------------
+.edit-content-container {
+	@include flex-column;
+	width: 80%;
+	color: #fff;
+	padding: 20px;
+	background-color: rgba(255, 255, 255, 0.2);
+
+	h1 {
+		font-size: 40px;
+		font-family: $titles;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+}
+.review-form-container {
+	@include flex-column;
+}
+
+.form-input {
+	margin: 15px auto;
+}
+
+.form-btn {
+	margin-top: 10px;
+	margin-bottom: 20px;
+	background-color: transparent;
+	border: 1px solid #fff;
+	color: #fff;
+	padding: 15px;
+}
+
+.form-text {
+	font-size: 18px;
+	color: #fff;
+}
+
+// --------------------------
 // Media Query
 // --------------------------
 @media screen and (min-width: 768px) {
-	// HOME
+	// Home
 	.home-header {
 		height: 50%;
 		align-content: space-around;
@@ -213,7 +260,7 @@ $main: "Lato", sans-serif;
 	}
 
 	.form-container {
-		width: 75%;
+		width: 100%;
 	}
 
 	.form-btn {
@@ -229,6 +276,18 @@ $main: "Lato", sans-serif;
 		margin-top: 10px;
 		font-size: 25px;
 		color: #fff;
+	}
+
+	// Edit
+	.edit-content-container {
+		width: 75%;
+		padding: 20px;
+
+		h1 {
+			font-size: 60px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
 	}
 }
 
@@ -279,7 +338,7 @@ $main: "Lato", sans-serif;
 	}
 
 	.form-container {
-		width: 60%;
+		width: 80%;
 	}
 
 	.form-btn {
@@ -293,6 +352,15 @@ $main: "Lato", sans-serif;
 	.form-text {
 		margin: 20px auto;
 		font-size: 30px;
+	}
+
+	// Edit
+	.edit-content-container {
+		h1 {
+			font-size: 80px;
+			margin-top: 20px;
+			margin-bottom: 30px;
+		}
 	}
 }
 
@@ -352,4 +420,5 @@ $main: "Lato", sans-serif;
 		margin: 20px auto;
 		font-size: 25px;
 	}
+
 }

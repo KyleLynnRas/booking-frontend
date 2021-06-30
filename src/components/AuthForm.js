@@ -8,6 +8,7 @@ const AuthForm = (props) => {
 				<Form.Label className="form-text">Username</Form.Label>
 				<Form.Control>
 					<Form.Input
+						className="form-input"
 						type="text"
 						name="username"
 						value={props.formData.username}
@@ -19,6 +20,7 @@ const AuthForm = (props) => {
 				<Form.Label className="form-text">Password</Form.Label>
 				<Form.Control>
 					<Form.Input
+						className="form-input"
 						type="password"
 						name="password"
 						value={props.formData.password}

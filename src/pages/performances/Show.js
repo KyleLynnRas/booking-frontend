@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 //components
 import Review from "../../components/Review";
-import Form from "../../components/Form";
+import EditForm from "../../components/EditForm";
 
 const Show = (props) => {
 	useEffect(() => {
@@ -71,7 +71,7 @@ const Show = (props) => {
 			{props.reviews ? loaded() : loading()}
 			<section>
 				<h3>Add Review</h3>
-				<Form users={props.users} submitFunc={props.create} id={id} />
+				<EditForm users={props.users} submitFunc={props.create} id={id} />
 			</section>
 			<button>
 				<Link to="/performances">Back</Link>

@@ -1,4 +1,5 @@
-import Form from "../../components/Form";
+//components
+import EditForm from "../../components/EditForm";
 
 const Edit = (props) => {
 	//get review id from param
@@ -10,14 +11,16 @@ const Edit = (props) => {
 	const perfId = review.performance_id;
 
 	return (
-		<div>
-			<h1>EDIT REVIEW</h1>
-			<Form
-				users={props.users}
-				id={perfId}
-				submitFunc={props.updateReview}
-				revId={id}
-			/>
+		<div className="main-signup-container">
+			<section className="edit-content-container">
+				<h1>Edit your review</h1>
+				<EditForm
+					users={props.users}
+					id={perfId}
+					submitFunc={props.updateReview}
+					revId={id}
+				/>
+			</section>
 		</div>
 	);
 };
