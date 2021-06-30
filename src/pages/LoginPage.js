@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import AuthForm from "../components/AuthForm";
 
 const LoginPage = (props) => {
 	//form state
@@ -56,28 +57,16 @@ const LoginPage = (props) => {
 	};
 
 	return (
-		<section>
-			<h1>Login</h1>
-			<form onSubmit={handleSubmit}>
-				<h1>Username</h1>
-				<input
-					type="text"
-					name="username"
-					value={formData.username}
-					onChange={handleChange}
+		<div className="main-signup-container">
+			<section className="signup-content-container">
+				<h1>Login</h1>
+				<AuthForm
+					handleSubmit={handleSubmit}
+					handleChange={handleChange}
+					formData={formData}
 				/>
-				<h1>Password</h1>
-				<input
-					type="password"
-					name="password"
-					value={formData.password}
-					onChange={handleChange}
-				/>
-				<button type="submit" value="submit">
-					Submit
-				</button>
-			</form>
-		</section>
+			</section>
+		</div>
 	);
 };
 
