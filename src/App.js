@@ -78,7 +78,7 @@ function App(props) {
 	//create new review
 	const createReview = async (formData) => {
 		try {
-			const response = await fetch(URL + "reviews", {
+			await fetch(URL + "reviews", {
 				method: "post",
 				headers: {
 					Authorization: `Bearer ${userState.token}`,
@@ -86,7 +86,6 @@ function App(props) {
 				},
 				body: JSON.stringify(formData),
 			});
-			const data = await response.json();
 			//update reviews
 			getReviews(userState.token);
 		} catch (error) {
@@ -97,7 +96,7 @@ function App(props) {
 	//update review info
 	const updateReview = async (formData, perfId, revId) => {
 		try {
-			const response = await fetch(URL + `reviews/${revId}`, {
+			await fetch(URL + `reviews/${revId}`, {
 				method: "put",
 				headers: {
 					"Content-Type": "application/json",
@@ -105,8 +104,6 @@ function App(props) {
 				},
 				body: JSON.stringify(formData),
 			});
-			const data = await response.json();
-			// console.log("update test " + data.id);
 			//update reviews
 			getReviews(userState.token);
 			props.history.push(`/performances/${perfId}`);
@@ -118,7 +115,7 @@ function App(props) {
 	//destroy review info
 	const destroyReview = async (revId) => {
 		try {
-			const response = await fetch(URL + `reviews/${revId}`, {
+			await fetch(URL + `reviews/${revId}`, {
 				method: "delete",
 				headers: {
 					Authorization: `Bearer ${userState.token}`,

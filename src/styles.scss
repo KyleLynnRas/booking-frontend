@@ -48,7 +48,8 @@ $main: "Lato", sans-serif;
 // --------------------------
 // Home
 // --------------------------
-.home-main-container {
+.home-main-container,
+.main-signup-container {
 	height: 100vh;
 	background-image: url("https://i.imgur.com/aBOgHfu.jpg");
 	background-image: linear-gradient(
@@ -124,7 +125,40 @@ $main: "Lato", sans-serif;
 	.btn {
 		margin: 10px;
 		background-color: rgba(0, 0, 0, 0.644);
+		color: #fff;
 	}
+}
+
+// --------------------------
+// Sign up
+// --------------------------
+.signup-content-container {
+	@include flex-column;
+	width: 80%;
+	color: #fff;
+	padding: 20px;
+	background-color: rgba(255, 255, 255, 0.2);
+
+	h1 {
+		font-size: 50px;
+		font-family: $titles;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+}
+
+.form-btn {
+	margin-top: 30px;
+	margin-bottom: 20px;
+	background-color: transparent;
+	border: 1px solid #fff;
+	color: #fff;
+	padding: 15px;
+}
+
+.form-text {
+	font-size: 20px;
+	color: #fff;
 }
 
 // --------------------------
@@ -167,6 +201,35 @@ $main: "Lato", sans-serif;
 			font-size: 25px;
 		}
 	}
+
+	// Sign up
+	.signup-content-container {
+		width: 60%;
+
+		h1 {
+			font-size: 70px;
+			margin-bottom: 30px;
+		}
+	}
+
+	.form-container {
+		width: 75%;
+	}
+
+	.form-btn {
+		margin-top: 40px;
+		padding: 15px;
+		width: 40%;
+		margin-bottom: 20px;
+		padding: 10px;
+		font-size: 20px;
+	}
+
+	.form-text {
+		margin-top: 10px;
+		font-size: 25px;
+		color: #fff;
+	}
 }
 
 @media screen and (min-width: 950px) {
@@ -199,10 +262,37 @@ $main: "Lato", sans-serif;
 
 	.home-btn-box-loggedout {
 		.btn {
-      font-size: 30px;
+			font-size: 30px;
 			width: 100%;
 			padding: 20px;
 		}
+	}
+
+	// Sign up
+	.signup-content-container {
+		width: 70%;
+
+		h1 {
+			font-size: 85px;
+			margin-bottom: 30px;
+		}
+	}
+
+	.form-container {
+		width: 60%;
+	}
+
+	.form-btn {
+		margin-top: 50px;
+		padding: 20px;
+		margin-bottom: 30px;
+		padding: 15px;
+		font-size: 25px;
+	}
+
+	.form-text {
+		margin: 20px auto;
+		font-size: 30px;
 	}
 }
 
@@ -210,7 +300,7 @@ $main: "Lato", sans-serif;
 	// HOME
 	.home-header {
 		height: 50%;
-    width: 60%;
+		width: 60%;
 
 		h1 {
 			font-size: 70px;
@@ -237,9 +327,29 @@ $main: "Lato", sans-serif;
 
 	.home-btn-box-loggedout {
 		.btn {
-      font-size: 20px;
+			font-size: 20px;
 			width: 100%;
 			padding: 15px;
 		}
+	}
+
+	// Sign up
+	.signup-content-container {
+		width: 60%;
+	}
+
+	.form-container {
+		width: 50%;
+	}
+
+	.form-btn {
+		margin-top: 50px;
+		padding: 15px;
+		font-size: 20px;
+	}
+
+	.form-text {
+		margin: 20px auto;
+		font-size: 25px;
 	}
 }

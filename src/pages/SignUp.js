@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+//Bulma
+import { Form, Button } from "react-bulma-components";
 
 const SignUp = (props) => {
 	//add form state
@@ -39,28 +41,38 @@ const SignUp = (props) => {
 	};
 
 	return (
-		<section>
-			<h1>SIGN UP</h1>
-			<form onSubmit={handleSubmit}>
-				<h1>Username</h1>
-				<input
-					type="text"
-					name="username"
-					value={formData.username}
-					onChange={handleChange}
-				/>
-				<h1>Password</h1>
-				<input
-					type="password"
-					name="password"
-					value={formData.password}
-					onChange={handleChange}
-				/>
-				<button type="submit" value="submit">
-					Submit
-				</button>
-			</form>
-		</section>
+		<div className="main-signup-container">
+			<section className="signup-content-container">
+				<h1>Sign up</h1>
+				<form className="form-container" onSubmit={handleSubmit}>
+					<Form.Field>
+						<Form.Label className="form-text">Username</Form.Label>
+						<Form.Control>
+							<Form.Input
+								type="text"
+								name="username"
+								value={formData.username}
+								onChange={handleChange}
+							/>
+						</Form.Control>
+					</Form.Field>
+					<Form.Field>
+						<Form.Label className="form-text">Password</Form.Label>
+						<Form.Control>
+							<Form.Input
+								type="password"
+								name="password"
+								value={formData.password}
+								onChange={handleChange}
+							/>
+						</Form.Control>
+					</Form.Field>
+					<Button type="submit" className="form-btn" value="submit">
+						Submit
+					</Button>
+				</form>
+			</section>
+		</div>
 	);
 };
 

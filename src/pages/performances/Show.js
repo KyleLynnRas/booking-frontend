@@ -23,10 +23,10 @@ const Show = (props) => {
 
 	const loaded = () => {
 		//find performance
-		const performance = performances.find((p) => p.id == id);
+		const performance = performances.find((p) => p.id === parseInt(id));
 		//return related reviews into new array
 		const revArr = props.reviews.filter((ele) => {
-			if (ele.performance.id == id) {
+			if (ele.performance.id === parseInt(id)) {
 				return ele;
 			}
 		});

@@ -5,7 +5,7 @@ const Edit = (props) => {
 	const id = props.match.params.id;
 	const reviews = props.reviews;
 	//find review
-	const review = reviews.find((r) => r.id == id);
+	const review = reviews.find((r) => r.id === parseInt(id));
 	//related performance info
 	const perfId = review.performance_id;
 

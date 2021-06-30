@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+//Bulma
+import { Button } from "react-bulma-components";
 
 const Home = ({ user }) => {
 	return (
@@ -10,22 +12,18 @@ const Home = ({ user }) => {
 					{user.token ? (
 						<div className="home-btn-box-loggedin">
 							<Link to="/performances">
-								<button type="button" class="btn btn-outline-light">
+								<Button type="button" className="btn btn-outline-light">
 									Let's go!
-								</button>
+								</Button>
 							</Link>
 						</div>
 					) : (
 						<div className="home-btn-box-loggedout">
 							<Link to="/login">
-								<button type="button" class="btn btn-outline-light">
-									Log in
-								</button>
+								<Button className="btn">Log in</Button>
 							</Link>
 							<Link to="/signup">
-								<button type="button" class="btn btn-outline-light">
-									Sign up
-								</button>
+								<Button className="btn">Sign up</Button>
 							</Link>
 						</div>
 					)}

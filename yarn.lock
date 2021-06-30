@@ -9560,6 +9560,13 @@
     "regenerator-runtime" "^0.13.7"
     "whatwg-fetch" "^3.4.1"
 
+"react-bulma-components@^4.0.7":
+  "integrity" "sha512-F6dsnkKWQU+dtaLO2gB+0RSbPBQAPIhzjn5C3SvUab7qJXlCM3mqy8+Rqc4j5UZdvfRjqwl4MKpkYSTAX6Z2ag=="
+  "resolved" "https://registry.npmjs.org/react-bulma-components/-/react-bulma-components-4.0.7.tgz"
+  "version" "4.0.7"
+  dependencies:
+    "classnames" "2.3.1"
+
 "react-dev-utils@^11.0.3":
   "integrity" "sha512-dx0LvIGHcOPtKbeiSUM4jqpBl3TcY7CDjZdfOIcKeznE7BWr9dg0iPG90G5yfVQ+p/rGNMXdbfStvzQZEVEi4A=="
   "resolved" "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-11.0.4.tgz"
