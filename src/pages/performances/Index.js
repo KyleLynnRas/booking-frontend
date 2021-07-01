@@ -14,7 +14,7 @@ const Index = (props) => {
 		console.log(props.user.token);
 		if (props.user.token) {
 		} else {
-			props.history.push("/login");
+			props.history.push("/");
 		}
 	}, []);
 

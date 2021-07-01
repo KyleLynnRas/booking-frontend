@@ -1,8 +1,17 @@
+import React, { useEffect } from "react";
 //components
 import Review from "../components/Review";
 import Nav from "../components/Nav";
 
 const UserShow = (props) => {
+	useEffect(() => {
+		console.log(props.users.token);
+		if (props.users.token) {
+		} else {
+			props.history.push("/");
+		}
+	}, []);
+
 	const loading = () => {
 		return <h1>Loading...</h1>;
 	};
