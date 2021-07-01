@@ -5,12 +5,14 @@ import { GoFlame } from "react-icons/go";
 const Nav = () => {
 	return (
 		<nav className="navbar">
-			<Link to="/">
-				<GoFlame className="nav-icon" />
+			<Link to="/mypage" className="nav-link">
+				Me
 			</Link>
-
 			<Link to="/performances" className="nav-link">
 				Performances
+			</Link>
+			<Link to="/">
+				<GoFlame className="nav-icon" className="nav-link"/>
 			</Link>
 		</nav>
 	);
