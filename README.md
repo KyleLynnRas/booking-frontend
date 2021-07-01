@@ -21,11 +21,11 @@ https://peculiarityproductions.netlify.app/
 
 ## Screenshots 
 
-<img src="https://i.imgur.com/CY5xkxE.png" width="175"> 
-<img src="https://i.imgur.com/fn6RivM.png" width="175"> 
-<img src="https://i.imgur.com/tfDG5w1.png" width="175">
-<img src="https://i.imgur.com/wcgnAvZ.png" width="175"> 
-<img src="https://i.imgur.com/pV0KjAP.png" width="175"> 
+<img src="https://i.imgur.com/CY5xkxE.png" width="250"> 
+<img src="https://i.imgur.com/fn6RivM.png" width="250"> 
+<img src="https://i.imgur.com/tfDG5w1.png" width="250">
+<img src="https://i.imgur.com/wcgnAvZ.png" width="250"> 
+<img src="https://i.imgur.com/pV0KjAP.png" width="250"> 
 
 ## Models
 
