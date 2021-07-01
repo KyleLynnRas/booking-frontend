@@ -5,7 +5,7 @@ import { BsFillStarFill } from "react-icons/bs";
 const Review = (props) => {
 	return (
 		<div id={props.id} className="review">
-			<Link className="review-link" to={`/reviews/${props.id}/edit`}>
+			<Link className="review-link" to={props.url}>
 				{props.rating === 1 ? (
 					<h4>
 						<BsFillStarFill />

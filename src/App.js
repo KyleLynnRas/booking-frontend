@@ -9,6 +9,7 @@ import Index from "./pages/performances/Index";
 import SignUp from "./pages/SignUp";
 import Show from "./pages/performances/Show";
 import Edit from "./pages/reviews/Edit";
+import UserShow from "./pages/UserShow";
 
 function App(props) {
 	const [userState, setUserState] = useState({
@@ -169,6 +170,13 @@ function App(props) {
 							updateReview={updateReview}
 							destroyReview={destroyReview}
 						/>
+					)}
+				/>
+				<Route
+					exact
+					path="/mypage"
+					render={(routerProps) => (
+						<UserShow {...routerProps} reviews={reviews} users={userState} />
 					)}
 				/>
 				<Route

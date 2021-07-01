@@ -73,6 +73,7 @@ const Show = (props) => {
 								content={ele.content}
 								author={ele.user.username}
 								destroyReview={props.destroyReview}
+								url={`/reviews/${ele.id}/edit`}
 							/>
 						))}
 					</div>
