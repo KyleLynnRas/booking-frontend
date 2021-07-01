@@ -240,6 +240,11 @@ $main: "Lato", sans-serif;
 	padding: 15px;
 }
 
+.form-btn:hover {
+	color: #fff;
+	font-weight: bold;
+}
+
 .form-text {
 	font-size: 18px;
 	color: #fff;
@@ -254,7 +259,7 @@ $main: "Lato", sans-serif;
 }
 
 .show-header {
-	height: 38vh;
+	height: 46vh;
 	background-image: url("https://i.imgur.com/tpbJlNE.jpg");
 	background-image: linear-gradient(#00000098, rgba(0, 0, 0, 0.913)),
 		url("https://i.imgur.com/tpbJlNE.jpg");
@@ -279,8 +284,9 @@ $main: "Lato", sans-serif;
 	@include flex-column;
 
 	.summary {
+		width: 70%;
 		margin-bottom: 50px;
-		font-size: 20px;
+		font-size: 15px;
 	}
 
 	.show-img {
@@ -691,7 +697,7 @@ $main: "Lato", sans-serif;
 
 	//Perf show
 	.show-header {
-		height: 38vh;
+		height: 42vh;
 
 		h1 {
 			font-size: 55px;
@@ -703,7 +709,7 @@ $main: "Lato", sans-serif;
 
 		.summary {
 			margin-bottom: 50px;
-			font-size: 25px;
+			font-size: 20px;
 		}
 
 		.show-img {
@@ -750,6 +756,7 @@ $main: "Lato", sans-serif;
 	.review-container {
 		@include flex-column;
 		margin-bottom: 50px;
+		padding: 0;
 	}
 
 	.rev-title {
@@ -764,16 +771,19 @@ $main: "Lato", sans-serif;
 		}
 	}
 
+	.review {
+		max-width: 40%;
+	}
+
 	.revs {
+		margin-top: 20px;
+		padding: 0;
+		width: 100vw;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
-		align-content: center;
+		align-items: flex-start;
 		flex-wrap: wrap;
-	}
-
-	.review {
-		width: 30%;
 	}
 
 	.review-link {
@@ -863,7 +873,6 @@ $main: "Lato", sans-serif;
 
 	.revs {
 		width: 90%;
-		@include flex-column;
 
 		.review {
 			width: 80%;
@@ -881,6 +890,11 @@ $main: "Lato", sans-serif;
 		.btn {
 			font-size: 70px;
 		}
+	}
+
+	.nav-icon,
+	.nav-link {
+		font-size: 30px;
 	}
 }
 
@@ -969,6 +983,7 @@ $main: "Lato", sans-serif;
 		margin-bottom: 40px;
 
 		.summary {
+			width: 70%;
 			margin-bottom: 50px;
 			font-size: 33px;
 		}
@@ -1022,7 +1037,7 @@ $main: "Lato", sans-serif;
 	}
 
 	.review {
-		width: 32%;
+		width: 35%;
 	}
 
 	.review-link {
@@ -1089,9 +1104,13 @@ $main: "Lato", sans-serif;
 		}
 	}
 
+	.perf-grid-container {
+		width: 98%;
+	}
+
 	.performance-container {
-		width: 45%;
-		height: 28vh;
+		width: 48%;
+		height: 26vh;
 		background-color: #000;
 
 		img {
@@ -1127,6 +1146,11 @@ $main: "Lato", sans-serif;
 		.btn {
 			font-size: 90px;
 		}
+	}
+
+	.nav-icon,
+	.nav-link {
+		font-size: 35px;
 	}
 }
 
@@ -1189,7 +1213,7 @@ $main: "Lato", sans-serif;
 
 	//Perf show
 	.show-header {
-		height: 50vh;
+		height: 55vh;
 
 		h1 {
 			font-size: 65px;
@@ -1200,11 +1224,12 @@ $main: "Lato", sans-serif;
 		margin-bottom: 100px;
 
 		.summary {
-			font-size: 33px;
+			width: 65%;
+			font-size: 20px;
 		}
 
 		.show-img {
-			width: 65%;
+			width: 55%;
 		}
 
 		.book-btn {
@@ -1258,9 +1283,13 @@ $main: "Lato", sans-serif;
 		}
 	}
 
+	.perf-grid-container {
+		width: 98%;
+	}
+
 	.performance-container {
 		width: 45%;
-		height: 40vh;
+		height: 48vh;
 		background-color: #000;
 
 		img {

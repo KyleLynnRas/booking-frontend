@@ -6,13 +6,13 @@ const Nav = () => {
 	return (
 		<nav className="navbar">
 			<Link to="/mypage" className="nav-link">
-				Me
+				My page
 			</Link>
 			<Link to="/performances" className="nav-link">
 				Performances
 			</Link>
 			<Link to="/">
-				<GoFlame className="nav-icon" className="nav-link"/>
+				<GoFlame className="nav-icon" className="nav-link" />
 			</Link>
 		</nav>
 	);
