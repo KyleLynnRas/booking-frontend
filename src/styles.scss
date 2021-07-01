@@ -575,6 +575,37 @@ $main: "Lato", sans-serif;
 }
 
 // --------------------------
+// Loading
+// --------------------------
+.index-loading {
+	.btn {
+		font-size: 40px;
+		border: none;
+		background-color: transparent;
+	}
+}
+
+.show-loading {
+	height: 100vh;
+	@include flex-column;
+	background-image: url("https://i.imgur.com/i1eSasy.png");
+	background-image: linear-gradient(#1010106c, #00000069),
+		url("https://i.imgur.com/i1eSasy.png");
+	background-image: -webkit-linear-gradient(#1010106c, #00000069),
+		url("https://i.imgur.com/i1eSasy.png");
+	background-image: -moz-linear-gradient(#1010106c, #00000069),
+		url("https://i.imgur.com/i1eSasy.png");
+	@include backgroundImage;
+
+	.btn {
+		font-size: 40px;
+		border: none;
+		color: #000;
+		background-color: transparent;
+	}
+}
+
+// --------------------------
 // Media Query
 // --------------------------
 @media screen and (min-width: 768px) {
@@ -838,6 +869,19 @@ $main: "Lato", sans-serif;
 			width: 80%;
 		}
 	}
+
+	//loading
+	.index-loading {
+		.btn {
+			font-size: 70px;
+		}
+	}
+
+	.show-loading {
+		.btn {
+			font-size: 70px;
+		}
+	}
 }
 
 @media screen and (min-width: 950px) {
@@ -1057,7 +1101,6 @@ $main: "Lato", sans-serif;
 	}
 
 	//User show
-
 	.user-content-container {
 		h1 {
 			font-size: 50px;
@@ -1070,6 +1113,19 @@ $main: "Lato", sans-serif;
 
 		p {
 			font-size: 25px;
+		}
+	}
+
+	//loading
+	.index-loading {
+		.btn {
+			font-size: 90px;
+		}
+	}
+
+	.show-loading {
+		.btn {
+			font-size: 90px;
 		}
 	}
 }
@@ -1226,6 +1282,19 @@ $main: "Lato", sans-serif;
 
 		p {
 			font-size: 20px;
+		}
+	}
+
+	//loading
+	.index-loading {
+		.btn {
+			font-size: 110px;
+		}
+	}
+
+	.show-loading {
+		.btn {
+			font-size: 110px;
 		}
 	}
 }

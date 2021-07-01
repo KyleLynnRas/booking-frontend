@@ -21,8 +21,8 @@ const Show = (props) => {
 
 	const loading = () => {
 		return (
-			<section>
-				<button className="button is-loading loading">Loading</button>
+			<section className="show-loading">
+				<Button className="is-loading btn"></Button>
 			</section>
 		);
 	};

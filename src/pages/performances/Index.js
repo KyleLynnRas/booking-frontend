@@ -8,6 +8,8 @@ import Specialty from "../../components/Specialty";
 import { MdBusinessCenter } from "react-icons/md";
 import { GiDiamondRing } from "react-icons/gi";
 import { FaBirthdayCake } from "react-icons/fa";
+//Bulma
+import { Button } from "react-bulma-components";
 
 const Index = (props) => {
 	useEffect(() => {
@@ -20,8 +22,8 @@ const Index = (props) => {
 
 	const loading = () => {
 		return (
-			<div className="loading">
-				<h1>Loading...</h1>
+			<div className="index-loading">
+				<Button className="is-loading btn"></Button>
 			</div>
 		);
 	};
