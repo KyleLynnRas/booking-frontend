@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Booking Site 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Summary 
 
-## Available Scripts
+A booking site for Peculiarity Productions to showcase different available performance packages and allow users to request a quote.  Users are able to sign up and log in and JWT is used to ensure users are logged in before accessing the pages. Users can see all reviews for a specific performace, and perform full CRUD operations on the review model by making requests to the backend booking-api. 
 
-In the project directory, you can run:
 
-### `yarn start`
+### Live link:
+https://peculiarityproductions.netlify.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies Used
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- JavaScript
+- React
+- HTML
+- React Router 
+- PostgreSQL
+- JSON Web Token
+- SASS
+- React Bulma Components
 
-### `yarn test`
+## Screenshots 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img src="https://i.imgur.com/CY5xkxE.png" width="175"> 
+<img src="https://i.imgur.com/fn6RivM.png" width="175"> 
+<img src="https://i.imgur.com/tfDG5w1.png" width="175">
+<img src="https://i.imgur.com/wcgnAvZ.png" width="175"> 
+<img src="https://i.imgur.com/pV0KjAP.png" width="175"> 
 
-### `yarn build`
+## Models
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img src='https://i.imgur.com/TkhUQi0.png' alt='ERD'>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## User Stories 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- AAU I would like to sign up and log in 
+- AAU I would like to see all the available performances in once place
+- AAU I would like to see detailed information about a performance 
+- AAU I would like to be able to see all the reviews for a specific performance
+- AAU I would like to be able to add a new review
+- AAU I would like to be able to edit a review
+- AAU I would like to be able to delete a review 
+- AAU I would like to see all the reviews I created in one place 
+- AAU I would like to be able to request a booking 
+- AAU I don't want to be able to access the pages unless I am logged in 
 
-### `yarn eject`
+## Future Goals 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Restrict a user from editing or deleting a review they did not make. 
+- Models are set up for the capabilty for a user to "favorite" a performance, and sort a performance by category. I hope to write the frontend code soon.
+- Video headers
+- Booking form using EmailJS
+- Add an expiration for the JWT
+- Add a logout feature 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
