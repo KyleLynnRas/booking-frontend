@@ -48,8 +48,7 @@ $main: "Lato", sans-serif;
 // --------------------------
 // Home
 // --------------------------
-.home-main-container,
-.main-signup-container {
+.home-main-container {
 	height: 100vh;
 	background-image: url("https://i.imgur.com/aBOgHfu.jpg");
 	background-image: linear-gradient(
@@ -114,6 +113,7 @@ $main: "Lato", sans-serif;
 	.btn {
 		margin: 10px;
 		background-color: rgba(0, 0, 0, 0.644);
+		color: #fff;
 	}
 }
 
@@ -132,6 +132,35 @@ $main: "Lato", sans-serif;
 // --------------------------
 // Sign up
 // --------------------------
+.main-signup-container {
+	height: 100vh;
+	padding-top: 30px;
+	background-image: url("https://i.imgur.com/VlV82an.jpg");
+	background-image: linear-gradient(
+			#00000059,
+			rgba(0, 0, 0, 0.767),
+			rgba(0, 0, 0, 0.034)
+		),
+		url("https://i.imgur.com/VlV82an.jpg");
+	background-image: -webkit-linear-gradient(
+			#00000059,
+			rgba(0, 0, 0, 0.767),
+			rgba(0, 0, 0, 0.034)
+		),
+		url("https://i.imgur.com/VlV82an.jpg");
+	background-image: -moz-linear-gradient(
+			#00000059,
+			rgba(0, 0, 0, 0.767),
+			rgba(0, 0, 0, 0.034)
+		),
+		url("https://i.imgur.com/VlV82an.jpg");
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	@include backgroundImage;
+}
+
 .signup-content-container {
 	@include flex-column;
 	width: 80%;
@@ -176,11 +205,11 @@ $main: "Lato", sans-serif;
 	@include flex-column;
 	width: 80%;
 	color: #fff;
-	padding: 20px;
+	padding: 10px;
 	background-color: rgba(255, 255, 255, 0.2);
 
 	h1 {
-		font-size: 40px;
+		font-size: 35px;
 		font-family: $titles;
 		margin-top: 20px;
 		margin-bottom: 20px;
@@ -189,10 +218,18 @@ $main: "Lato", sans-serif;
 .show-form-container,
 .edit-form-container {
 	@include flex-column;
+
 }
 
 .form-input {
 	margin: 15px auto;
+}
+
+.edit-btn-box {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
 }
 
 .form-btn {
@@ -372,14 +409,14 @@ $main: "Lato", sans-serif;
 	.nav-icon {
 		margin-left: 7px;
 		color: #fff;
-		font-size: 15px;
+		font-size: 20px;
 		cursor: pointer;
 	}
 
 	.nav-link {
 		margin-right: 7px;
 		color: #fff;
-		font-size: 15px;
+		font-size: 20px;
 		cursor: pointer;
 	}
 
@@ -445,10 +482,10 @@ $main: "Lato", sans-serif;
 	}
 }
 
-.specialty-container {
-	font-size: 20px;
-	margin: 10px;
-}
+// .specialty-container {
+// 	font-size: 20px;
+// 	margin: 10px;
+// }
 
 .cards-container {
 	padding-bottom: 60px;
@@ -468,6 +505,10 @@ $main: "Lato", sans-serif;
 		color: #fff;
 		font-size: 20px;
 		margin-bottom: 30px;
+	}
+
+	.perf-grid-container {
+		@include flex-column;
 	}
 }
 
@@ -511,6 +552,7 @@ $main: "Lato", sans-serif;
 			font-size: 25px;
 			width: 100%;
 			padding: 10px;
+			color: #fff;
 		}
 	}
 
@@ -519,6 +561,7 @@ $main: "Lato", sans-serif;
 			width: 100%;
 			padding: 10px;
 			font-size: 25px;
+			color: #fff;
 		}
 	}
 

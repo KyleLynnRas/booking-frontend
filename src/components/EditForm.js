@@ -59,12 +59,14 @@ const EditForm = (props) => {
 					/>
 				</Form.Control>
 			</Form.Field>
-			<Button className="form-btn" onClick={handleDelete}>
-				Delete
-			</Button>
-			<Button className="form-btn" type="submit" value="submit">
-				Submit
-			</Button>
+			<section className="edit-btn-box">
+				<Button className="form-btn" onClick={handleDelete}>
+					Delete
+				</Button>
+				<Button className="form-btn" type="submit" value="submit">
+					Submit
+				</Button>
+			</section>
 		</form>
 	);
 };
