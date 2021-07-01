@@ -361,29 +361,124 @@ $main: "Lato", sans-serif;
 .navbar {
 	position: absolute;
 	top: 0;
-	width: 100vw;
+	width: 100%;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
 	background-color: #000;
 	color: #fff;
+	border: 4px solid #000;
 
-.nav-icon {
-	color: #fff;
-	font-size: 17px;
-	cursor: pointer;
+	.nav-icon {
+		margin-left: 7px;
+		color: #fff;
+		font-size: 15px;
+		cursor: pointer;
+	}
+
+	.nav-link {
+		margin-right: 7px;
+		color: #fff;
+		font-size: 15px;
+		cursor: pointer;
+	}
+
+	.nav-icon:hover,
+	.nav-link:hover {
+		color: rgba(238, 175, 87, 0.979);
+	}
 }
 
-.nav-link {
-	color: #fff;
-	font-size: 17px;
-	cursor: pointer;
+// --------------------------
+// Index
+// --------------------------
+.index-main-contianer {
+	height: 100vh;
 }
 
-.nav-icon:hover, .nav-link:hover {
-	color: rgba(238, 175, 87, 0.979);
+.index-header {
+	height: 45vh;
+	background-image: url("https://i.imgur.com/3tc6Kxa.jpg");
+	background-image: linear-gradient(#00000042, rgba(0, 0, 0, 0.719)),
+		url("https://i.imgur.com/3tc6Kxa.jpg");
+	background-image: -webkit-linear-gradient(#00000042, rgba(0, 0, 0, 0.719)),
+		url("https://i.imgur.com/3tc6Kxa.jpg");
+	background-image: -moz-linear-gradient(#00000042, rgba(0, 0, 0, 0.719)),
+		url("https://i.imgur.com/3tc6Kxa.jpg");
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	@include backgroundImage;
+
+	h1 {
+		color: #fff;
+		font-size: 30px;
+		font-family: $titles;
+	}
 }
 
+.content-container {
+	padding: 20px;
+	margin: 30px auto 30px auto;
+
+	h2 {
+		margin-bottom: 30px;
+		font-size: 20px;
+	}
+
+	p {
+		font-size: 12px;
+		margin-bottom: 25px;
+	}
+
+	.icon-container {
+		margin-top: 50px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		align-items: center;
+
+		.index-icon {
+			font-size: 25px;
+		}
+	}
+}
+
+.specialty-container {
+	font-size: 20px;
+	margin: 10px;
+}
+
+.cards-container {
+	padding-bottom: 60px;
+	padding-top: 60px;
+	background-image: url("https://i.imgur.com/i1eSasy.png");
+	background-image: linear-gradient(#1010106c, #00000069),
+		url("https://i.imgur.com/i1eSasy.png");
+	background-image: -webkit-linear-gradient(#1010106c, #00000069),
+		url("https://i.imgur.com/i1eSasy.png");
+	background-image: -moz-linear-gradient(#1010106c, #00000069),
+		url("https://i.imgur.com/i1eSasy.png");
+	@include backgroundImage;
+	@include flex-column;
+
+	h2 {
+		font-family: $titles;
+		color: #fff;
+		font-size: 20px;
+		margin-bottom: 30px;
+	}
+}
+
+.performance-container {
+	width: 80%;
+	background-color: #000;
+
+	img {
+		width: 100%;
+		height: 100%;
+	}
 }
 
 // --------------------------
@@ -575,6 +670,47 @@ $main: "Lato", sans-serif;
 		font-size: 100px;
 		color: #fff;
 	}
+
+	//Index
+	.index-header {
+		height: 40vh;
+		h1 {
+			font-size: 55px;
+		}
+	}
+
+	.content-container {
+		padding: 40px;
+
+		h2 {
+			margin-bottom: 50px;
+			font-size: 30px;
+		}
+
+		p {
+			font-size: 18px;
+			margin-bottom: 25px;
+		}
+
+		.icon-container {
+			margin-top: 70px;
+			font-size: 25px;
+
+			p {
+				font-size: 25px;
+			}
+		}
+	}
+
+	.cards-container {
+		padding-bottom: 90px;
+		padding-top: 90px;
+
+		h2 {
+			font-size: 40px;
+			margin-bottom: 80px;
+		}
+	}
 }
 
 @media screen and (min-width: 950px) {
@@ -735,6 +871,64 @@ $main: "Lato", sans-serif;
 		font-size: 100px;
 		color: #fff;
 	}
+
+	//Index
+	.index-header {
+		height: 40vh;
+		h1 {
+			font-size: 75px;
+		}
+	}
+
+	.content-container {
+		padding: 80px;
+
+		h2 {
+			margin-bottom: 50px;
+			font-size: 35px;
+		}
+
+		p {
+			font-size: 22px;
+			margin-bottom: 30px;
+		}
+
+		.icon-container {
+			margin-top: 90px;
+			font-size: 25px;
+
+			p {
+				font-size: 25px;
+			}
+		}
+	}
+
+	.cards-container {
+	
+		padding-bottom: 90px;
+		padding-top: 120px;
+
+		h2 {
+			font-size: 50px;
+			margin-bottom: 110px;
+		}
+
+		.perf-grid-container {
+			@include flex-row;
+			flex-wrap: wrap;
+		}
+	}
+
+	.performance-container {
+		width: 45%;
+		height: 28vh;
+		background-color: #000;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
 }
 
 @media screen and (min-width: 1200px) {
@@ -834,7 +1028,6 @@ $main: "Lato", sans-serif;
 		.form-text {
 			font-size: 30px;
 		}
-
 	}
 
 	.review {
@@ -842,7 +1035,6 @@ $main: "Lato", sans-serif;
 	}
 
 	.review-link {
-
 		h4 {
 			font-size: 30px;
 		}
@@ -852,4 +1044,29 @@ $main: "Lato", sans-serif;
 		}
 	}
 
+		//Index
+		.index-header {
+			height: 60vh;
+		}
+	
+		.cards-container {
+			padding-bottom: 90px;
+			padding-top: 120px;
+	
+			h2 {
+				font-size: 50px;
+				margin-bottom: 110px;
+			}
+		}
+	
+		.performance-container {
+			width: 45%;
+			height: 40vh;
+			background-color: #000;
+	
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
 }

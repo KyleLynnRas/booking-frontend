@@ -3,6 +3,11 @@ import React, { useEffect } from "react";
 import Performance from "../../components/Performance";
 import Footer from "../../components/Footer";
 import Nav from "../../components/Nav";
+import Specialty from "../../components/Specialty";
+//icons
+import { MdBusinessCenter } from "react-icons/md";
+import { GiDiamondRing } from "react-icons/gi";
+import { FaBirthdayCake } from "react-icons/fa";
 
 const Index = (props) => {
 	useEffect(() => {
@@ -24,34 +29,50 @@ const Index = (props) => {
 	const loaded = () => {
 		return props.performances.map((ele, index) => {
 			return (
-				<Performance
-					key={ele.id}
-					id={ele.id}
-					title={ele.title}
-					img={ele.img}
-					summary={ele.summary}
-					price={ele.price}
-				/>
+				<Performance key={ele.id} id={ele.id} title={ele.title} img={ele.img} />
 			);
 		});
 	};
 
 	return (
-		<div>
+		<div className="index-main-contianer">
 			<Nav />
-			<header>
+			<header className="index-header">
 				<h1>Peculiarity Productions</h1>
-				<p>Make your event memorable by adding some peculiar entertainment!</p>
 			</header>
-			<section>
+			<section className="content-container">
 				<h2>
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid quam
-					tempora iste sit assumenda ea deleniti esse eum, corporis,
-					reprehenderit a! Nulla perspiciatis voluptates blanditiis porro neque
-					temporibus ea unde.
+					Make your event memorable by adding some peculiar entertainment!
 				</h2>
+				<p>
+					Dream it up, and we can help make it happen with our team of
+					performers specializing in a wide array of circus arts. Our
+					performances are perfect for every occasion:
+				</p>
+				<div className="icon-container">
+					<Specialty
+						className="index-icon"
+						icon={<GiDiamondRing />}
+						par="Weddings"
+					/>
+					<Specialty
+						className="index-icon"
+						icon={<FaBirthdayCake />}
+						par="Birthdays"
+					/>
+					<Specialty
+						className="index-icon"
+						icon={<MdBusinessCenter />}
+						par="Corporate"
+					/>
+				</div>
 			</section>
-			<section>{props.performances ? loaded() : loading()}</section>
+			<section className="cards-container">
+				<h2>Browse our performance packages</h2>
+				<div className="perf-grid-container">
+					{props.performances ? loaded() : loading()}
+				</div>
+			</section>
 			<Footer />
 		</div>
 	);

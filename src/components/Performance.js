@@ -1,15 +1,14 @@
 import { Link } from "react-router-dom";
+//Bulma
+import { Card } from "react-bulma-components";
 
 const Performance = (props) => {
 	return (
-		<div id={props.id}>
+		<Card id={props.id} className="performance-container is-rounded">
 			<Link to={`/performances/${props.id}`}>
-				<h3>{props.title}</h3>
+				<img src={props.img} alt={props.title} />
 			</Link>
-			<img src={props.img} alt={props.title} />
-			<p>{props.summary}</p>
-			<p>{props.price}</p>
-		</div>
+		</Card>
 	);
 };
 
