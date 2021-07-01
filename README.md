@@ -53,5 +53,8 @@ https://peculiarityproductions.netlify.app/
 - Add an expiration for the JWT
 - Add a logout feature 
 
+## Existing Bugs
+
+- A few responsive design issues 
 
 
