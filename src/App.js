@@ -26,7 +26,7 @@ function App(props) {
 	//Initial token check, if none send home
 	useEffect(() => {
 		if (window.localStorage.getItem("token")) {
-			console.log("found token");
+			// console.log("found token");
 			//retrieve info from local storage
 			let localToken = window.localStorage.getItem("token");
 			let localUser = window.localStorage.getItem("user");
