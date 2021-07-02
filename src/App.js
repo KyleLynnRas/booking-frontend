@@ -36,7 +36,7 @@ function App(props) {
 			getPerformances(localToken);
 			getReviews(localToken);
 		} else {
-			console.log("please log in");
+			alert("please log in");
 		}
 		//run again when change in token
 	}, [userState.token]);

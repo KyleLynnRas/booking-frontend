@@ -2,8 +2,9 @@
 
 ### Summary 
 
-A booking site for Peculiarity Productions to showcase different available performance packages and allow users to request a quote.  Users are able to sign up and log in and JWT is used to ensure users are logged in before accessing the pages. Users can see all reviews for a specific performace, and perform full CRUD operations on the review model by making requests to the backend booking-api. 
+A booking site for Peculiarity Productions to showcase different available performance packages and allow users to request a quote.  Users are able to sign up and log in and JWT is used to ensure users are logged in before accessing the pages. Users can see all reviews for a specific performance, and perform full CRUD operations on the review model by making requests to the backend booking-api. 
 
+Photography by: Rob Klug, Tony Hitchcock, Devon Rowland, Levi CHeff and Gotchabitchez
 
 ### Live link:
 https://peculiarityproductions.netlify.app/

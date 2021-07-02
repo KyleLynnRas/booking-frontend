@@ -32,7 +32,6 @@ const Edit = (props) => {
 				revId={id}
 				initialReview={review}
 				destroyReview={props.destroyReview}
-				class="edit-form-container"
 			/>
 		);
 	};
