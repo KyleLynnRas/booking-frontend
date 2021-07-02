@@ -7,11 +7,11 @@ const EditForm = (props) => {
 
 	const handleChange = (e) => {
 		setFormData({ ...formData, [e.target.name]: e.target.value });
-		console.log(formData);
+		// console.log(formData);
 	};
 
 	const handleSubmit = (e) => {
-		console.log(formData);
+		// console.log(formData);
 		e.preventDefault();
 		//edit
 		props.submitFunc(formData, props.id, props.revId);

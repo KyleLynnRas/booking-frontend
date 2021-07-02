@@ -9,7 +9,7 @@ import { Button, Image } from "react-bulma-components";
 
 const Show = (props) => {
 	useEffect(() => {
-		console.log(props.users.token);
+		// console.log(props.users.token);
 		if (props.users.token) {
 		} else {
 			props.history.push("/");

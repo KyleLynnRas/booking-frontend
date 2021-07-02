@@ -31,8 +31,8 @@ const SignUp = (props) => {
 				},
 				body: JSON.stringify(userData),
 			});
-			const newUser = await response.json();
-			console.log(newUser);
+			// const newUser = await response.json();
+			// console.log(newUser);
 			//redirect
 			props.history.push("/login");
 		} catch (error) {

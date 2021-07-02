@@ -57,5 +57,6 @@ https://peculiarityproductions.netlify.app/
 ## Existing Bugs
 
 - A few responsive design issues 
+- When sending a delete request to the backend, an unsuccessful put request is also being sent causing a warning in the console (delete and edit functionality work). 
 
 

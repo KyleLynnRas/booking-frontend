@@ -5,7 +5,7 @@ import Nav from "../components/Nav";
 
 const UserShow = (props) => {
 	useEffect(() => {
-		console.log(props.users.token);
+		// console.log(props.users.token);
 		if (props.users.token) {
 		} else {
 			props.history.push("/");

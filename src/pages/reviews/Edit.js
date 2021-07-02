@@ -5,7 +5,7 @@ import Nav from "../../components/Nav";
 
 const Edit = (props) => {
 	useEffect(() => {
-		console.log(props.users.token);
+		// console.log(props.users.token);
 		if (props.users.token) {
 		} else {
 			props.history.push("/login");

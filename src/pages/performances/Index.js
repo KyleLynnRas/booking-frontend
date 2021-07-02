@@ -13,7 +13,7 @@ import { Button } from "react-bulma-components";
 
 const Index = (props) => {
 	useEffect(() => {
-		console.log(props.user.token);
+		// console.log(props.user.token);
 		if (props.user.token) {
 		} else {
 			props.history.push("/");

@@ -19,7 +19,7 @@ const NewForm = (props) => {
 	};
 
 	const handleSubmit = (e) => {
-		console.log(formData);
+		// console.log(formData);
 		e.preventDefault();
 		//create
 		props.submitFunc(formData, props.id, props.revId);
