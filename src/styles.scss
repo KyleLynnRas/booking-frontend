@@ -296,6 +296,12 @@ $main: "Lato", sans-serif;
 		top: -30px;
 	}
 
+	.photographer {
+		margin-top: -20px;
+		font-size: 10px;
+		margin-bottom: 20px;
+	}
+
 	.book-btn {
 		background-color: rgba(255, 135, 6, 0.906);
 		color: #fff;
@@ -395,6 +401,7 @@ $main: "Lato", sans-serif;
 // --------------------------
 .footer-container {
 	background-color: #000;
+	border: 5px solid #000;
 }
 
 // --------------------------
@@ -717,6 +724,11 @@ $main: "Lato", sans-serif;
 			top: -40px;
 		}
 
+		.photographer {
+			font-size: 15px;
+			margin-bottom: 23px;
+		}
+
 		.book-btn {
 			font-size: 20px;
 			font-weight: 600;
@@ -993,6 +1005,11 @@ $main: "Lato", sans-serif;
 			top: -40px;
 		}
 
+		.photographer {
+			font-size: 18px;
+			margin-bottom: 30px;
+		}
+
 		.book-btn {
 			margin-top: 40px;
 			font-size: 25px;
@@ -1230,6 +1247,11 @@ $main: "Lato", sans-serif;
 
 		.show-img {
 			width: 55%;
+		}
+
+		.photographer {
+			font-size: 15px;
+			margin-bottom: 25px;
 		}
 
 		.book-btn {

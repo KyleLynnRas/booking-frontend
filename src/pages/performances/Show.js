@@ -50,6 +50,13 @@ const Show = (props) => {
 						src={performance.img}
 						alt={performance.title}
 					/>
+					{performance.photographer ? (
+						<p className="photographer">
+							Photographer: {performance.photographer}
+						</p>
+					) : (
+						""
+					)}
 					<p className="summary">{performance.summary}</p>
 					<a
 						href="mailto:peculiarityproductions@gmail.com?Subject=Quote%20request"
